@@ -35,7 +35,7 @@
     stratcond presents to noitd upon connecting is used as the jlog
     subscriber name.
   </para>
-  <section id="arch.noitd.design">
+  <section id="arch.stratcond.design">
     <title>stratcond Design</title>
     <para>
       stratcond is simple in both purpose and design.  All connections to
