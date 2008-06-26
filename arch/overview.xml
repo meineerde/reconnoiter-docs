@@ -40,7 +40,7 @@
       The direct access is suggested for sensitive services that should
       not be accessible from outside the network.
     </para>
-    <para<
+    <para>
       The noitd daemon provide data feed services to a stratcond daemon
       over port 34332 (or another port of your choosing) via an SSL
       protected TCP transport.
