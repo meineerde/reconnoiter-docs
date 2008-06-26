@@ -28,6 +28,10 @@
     <title>Architecture</title>
     &arch.all;
   </part>
+  <part id="configuration">
+    <title>Configuration</title>
+    &config.all;
+  </part>
   <part id="reference">
     <title>Code reference</title>
     <reference id="ref">
