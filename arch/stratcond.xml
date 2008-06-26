@@ -7,41 +7,37 @@
 ]>
 <chapter id="arch.stratcond">
   <title>stratcond</title>
-  <para>
-    Both noitd and stratcond make heavy use of SSL certificates.  The SSL
-    certificates are used for security purposes, but are required for
-    correct operation.  The common names on the certs identify different
-    components of the systems to each other and must match up or the
-    components will fail to communicate.
-  </para>
-  <para>
-    It is highly suggested that you use a certificate authority to manage
-    the certificated issues to each noitd and stratcond daemon.
-  </para>
+
+  &ssl;
 
   <para>
     stratcond is responsible for pulling collected metrics from noitd
     processes running in the field.  It will connect to noitd over
-    and SSL protected TCP transport on port 34332 (or another port
-    of your choosing) and the noitd will push a dataset to stratcond.
+    an SSL-protected TCP transport on port 34332 (or another port
+    of your choosing), then noitd will push a dataset to stratcond.
     stratcond will transform this dataset and insert it into the
     PostgreSQL datastore.
   </para>
   <para>
     Data collected by noitd is stored in a jlog journal which is a
-    segment-based, publish-subscribe journal.  Adhering to the publish
+    segment-based, publish-subscribe journal.  Adhering to the publish-
     subscribe model, the stratcond must be a subscriber to this log
     and the common name (CN) in the client-side SSL certificate that
     stratcond presents to noitd upon connecting is used as the jlog
     subscriber name.
+  </para>
+  <para>
+    See the 
+    <ulink url="http://labs.omniti.com/trac/jlog"><citetitle>JLog</citetitle></ulink>
+    project page for more information about JLog.
   </para>
   <section id="arch.stratcond.design">
     <title>stratcond Design</title>
     <para>
       stratcond is simple in both purpose and design.  All connections to
       remote noitd deamons are managed in a single thread in the event
-      system.  As data is received from the noitd daemon, it is pushed
-      onto a datastore queue for that noitd instance.  A database connection
+      system.  As data is received from each noitd daemon, it is pushed
+      onto a datastore queue for that daemon.  A database connection
       is established for each noitd daemon (each in its own thread) and
       those threads consume the datastore queue, transforming and inserting
       data into PostgreSQL.
@@ -49,17 +45,17 @@
     <para>
       Inserts are performed in batches.  At the end of each batch, stratcond
       will commit the database transaction and advise the the remote noitd
-      to checkpoint the subscriber position.  This two point commit is not
+      to checkpoint the subscriber position.  This two-point commit is not
       XA-safe and there is a possibility that data could be committed to the
       datastore and the subscriber checkpoint not be updated.  This will
-      result in an attempt to repeat the data insertion resulting in
+      result in an attempt to repeat the data insertion, resulting in
       primary key violations which are ignored.
     </para>
     <para>
-      The configuration system is uses the same configuration processing system
-      as noitd.  It is XML based and provides facilities for defining the
-      SQL statements executed against PostgreSQL, the connection parameters,
-      and the various remote noitd instances to which it should connect.
+      stratcond uses the same configuration processing system as noitd.  
+      It is XML-based and provides facilities for defining the SQL statements 
+      executed against PostgreSQL, the connection parameters, and the various 
+      remote noitd instances to which it should connect.
     </para>
   </section>
 </chapter>

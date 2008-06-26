@@ -47,10 +47,10 @@
 <title>Implicit Inheritance</title>
 <para>
 Unless otherwise specified, elements and attributes are inherited from
-all anscestors.  As is typical with inheritence, the youngest/deepest
-value overrides values of anscestors.  If the value requests is a set
-of key/value pairs, the the top-most anscestor is is queried, then its
-child is queries merging values replacing conflicts and so on until
+all ancestors.  As is typical with inheritance, the youngest/deepest
+value overrides values of ancestors.  If the value requested is a set
+of key/value pairs, the top-most ancestor is queried, then its
+child is queried, merging values, replacing conflicts and so on until
 the youngest/deepest node is reached.
 </para>
 
@@ -110,24 +110,26 @@ approaches: "express yourself once and reuse."
 <title>Explicit Inheritance</title>
 
 <para>
-Sometimes it is useful to define a configuration table key/value set
+Sometimes it is useful to define a configuration key/value set
 for reuse, but the strict parent-child inheritance model is awkward.
 Under these circumstances, the explicit inheritance often solves the
 issue at hand.  With explicit inheritance, a configuration can inherit
 from another named node elsewhere in the configuration.
 </para>
-
-<para>The &lt;config /&gt; stanzas can be identified, as is typical in XML, with
+<para>
+The &lt;config /&gt; stanzas can be identified, as is typical in XML, with
 the "id" attribute: &lt;config id="sample" /&gt;.  Additionally, any config
 may explicitly specify that it inherits from a named config by
-specifying the "inherit" attribute.</para>
-
-<para>Any &lt;config /&gt;, A, which has the "inherit" attribute will first
+specifying the "inherit" attribute.
+</para>
+<para>
+Any &lt;config /&gt;, A, which has the "inherit" attribute will first
 inherit from its most direct parent, then supplement/replace those
 key/values with the configuration whose "id" attribute matches the
 "inherit" attribute of A, and finally supplement/replace those
 key/values with key/values directly beneath A.  The entire tree is
-searched for a node whose "id" matches A's "inherit" attribute.</para>
+searched for a node whose "id" matches A's "inherit" attribute.
+</para>
 
 <example>
 <title>Simple explicity inheritance configuration example</title>
@@ -155,7 +157,7 @@ searched for a node whose "id" matches A's "inherit" attribute.</para>
 </example>
 
 <para>The config named "A" contains:</para>
-<variablelist>
+<variablelist spacing="compact">
   <varlistentry><term>key1</term><listitem><para>a</para></listitem></varlistentry>
   <varlistentry><term>key2</term><listitem><para>b</para></listitem></varlistentry>
   <varlistentry><term>key3</term><listitem><para>c</para></listitem></varlistentry>
@@ -170,31 +172,39 @@ searched for a node whose "id" matches A's "inherit" attribute.</para>
   <varlistentry><term>key5</term><listitem><para>bobE</para></listitem></varlistentry>
 </variablelist>
 
-<para>It should be noted hat all config's include the one named "B" above
-follows this same inheritance model.</para>
+<para>
+It should be noted hat all config's include the one named "B" above
+follows this same inheritance model.
+</para>
 </section>
 
 <section id="config.noitd.section.eventer">
   <title>The &lt;eventer&gt; section</title>
 
-<para>This section provides configuration directives to the eventing
+<para>
+This section provides configuration directives to the eventing
 subsystem.  Think of the eventer as the engine that drives all I/O,
 jobs, and timed events.  To choose the eventer, the "implementation"
 attribute is used in the eventer node.  For example, to select the
-kqueue eventer (for Mac OS X or modern BSDs):</para>
+kqueue eventer (for Mac OS X or modern BSDs):
+</para>
 
 <programlisting><![CDATA[
   <eventer implementation="kqueue" />
 ]]></programlisting>
 
-<para>Theo following eventer implementations exist: kqueue (Mac/BSD), epoll (Linux), ports (Solaris 10+).</para>
+<para>
+The following eventer implementations exist: kqueue (Mac/BSD), epoll (Linux), ports (Solaris 10+).
+</para>
 </section>
 
 <section id="config.noitd.section.logs">
   <title>The &lt;logs&gt; section</title>
 
-<para>The logs section contains &lt;log&gt; elements at arbitrary depths.  A log
-requires several attributes to be useful:</para>
+<para>
+The logs section contains &lt;log&gt; elements at arbitrary depths.  A log
+requires several attributes to be useful:
+</para>
 
 <variablelist>
   <varlistentry><term>name</term><listitem><para>
@@ -228,10 +238,12 @@ present.  The outlet element must contain a "name" attribute (this
 attribute is not inherited) that matches a *previously* declared &lt;log&gt;
 by its "name" attribute.  Foreach &lt;outlet&gt; tag, a sink is created so
 that any input sent to the containing &lt;log&gt; will additionally be
-propagated to the &lt;outlet&gt;.</para>
-
-<para>There is an implicit log named "stderr" that is attached to file
-descriptor 2.</para>
+propagated to the &lt;outlet&gt;.
+</para>
+<para>
+There is an implicit log named "stderr" that is attached to file
+descriptor 2.
+</para>
 
 <section id="config.noitd.section.logs.special">
   <title>Special log names</title>
@@ -251,7 +263,7 @@ descriptor 2.</para>
 
   <varlistentry><term>check</term><listitem><para>
    When a check is altered in any way (including creation),
-   the identifying attributes, includeing the uuid are logged to this
+   the identifying attributes, including the uuid, are logged to this
    facility.
 
    <programlisting>
@@ -261,8 +273,8 @@ descriptor 2.</para>
 
   <varlistentry><term>status</term><listitem><para>
    When a check status changes (either availability or
-   state) and neither the new state nor the old state are "unknown" it
-   is considered a state change for the check and the new availability
+   state) and neither the new state nor the old state are "unknown", it
+   is considered a state change for the check.  The new availability
    and new state are logged to this facility.
 
    <programlisting>
@@ -331,13 +343,13 @@ descriptor 2.</para>
    a &lt;console&gt; metagroup is created for the purpose of inheriting the
    "stderr" outlet.  The logs named "error" and "debug" are
    instantiated and inherit the "stderr" outlet.  However, "debug" is
-   disabled, so no input the the "debug" log will be written anywhere.
+   disabled, so no input to the "debug" log will be written anywhere.
    </para></listitem>
 
    <listitem><para>
-   a log named "feed" is create of type "jlog" writing to the
-   "/var/log/noitd.feed" directory (jlogs paths are directories, where
-   as "file" paths are filenames).
+   a log named "feed" is created of type "jlog" writing to the
+   "/var/log/noitd.feed" directory (jlogs paths are directories, whereas 
+   "file" paths are filenames).
    </para></listitem>
 
    <listitem><para>
