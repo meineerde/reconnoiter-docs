@@ -24,7 +24,7 @@
 
   &preface;
 
-  <part id="arch">
+  <part id="archecture">
     <title>Architecture</title>
     &arch.all;
   </part>
