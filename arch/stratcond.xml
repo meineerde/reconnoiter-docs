@@ -7,9 +7,6 @@
 ]>
 <chapter id="arch.stratcond">
   <title>stratcond</title>
-
-  &ssl;
-
   <para>
     stratcond is responsible for pulling collected metrics from noitd
     processes running in the field.  It will connect to noitd over

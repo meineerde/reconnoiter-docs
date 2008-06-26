@@ -7,9 +7,6 @@
 ]>
 <chapter id="arch.noitd">
   <title>noitd</title>
-
-  &ssl;
-
   <para>
     noitd is the "scout in the field."  It is responsible for performing
     service checks and obtaining metric information from services on
