@@ -5,9 +5,11 @@
   <!ENTITY % magic.fixup SYSTEM "http://labs.omniti.com/docbook/ent">
   %magic.fixup;
 ]>
-<chapter id="arch.noitd">
+<chapter id="config.noitd">
   <title>noitd</title>
-  <example><![CDATA[
+  <example>
+  <title>Basic noitd configuration struture</title>
+  <programlisting><![CDATA[
   <noit>
     <eventer/>
     <modules>
@@ -38,8 +40,8 @@
       </...>
     </checks>
   </noit>
-]]>
-  </example>
+]]></programlisting>
+</example>
 
 <section id="config.noitd.implicitinheritance">
 <title>Implicit Inheritance</title>
@@ -52,7 +54,9 @@ child is queries merging values replacing conflicts and so on until
 the youngest/deepest node is reached.
 </para>
 
-<example><![CDATA[
+<example>
+<title>Simple implicit inheritance configuration example</title>
+<programlisting><![CDATA[
       <a foo="bar">
         <config>
           <key1>val a 1</key1>
@@ -66,7 +70,8 @@ the youngest/deepest node is reached.
           <c foo="meme" />
         </b>
       </a>
-]]></example>
+]]></programlisting>
+</example>
 
 <para>
 When looking at the "foo" attribute we see the following values at nodes:
@@ -124,7 +129,9 @@ key/values with the configuration whose "id" attribute matches the
 key/values with key/values directly beneath A.  The entire tree is
 searched for a node whose "id" matches A's "inherit" attribute.</para>
 
-<example><![CDATA[
+<example>
+<title>Simple explicity inheritance configuration example</title>
+<programlisting><![CDATA[
   <config name="A">
     <key1>a</key1>
     <key2>b</key2>
@@ -144,7 +151,8 @@ searched for a node whose "id" matches A's "inherit" attribute.</para>
       </z>
     </y>
   </x>
-]]></example>
+]]></programlisting>
+</example>
 
 <para>The config named "A" contains:</para>
 <variablelist>
@@ -175,9 +183,9 @@ jobs, and timed events.  To choose the eventer, the "implementation"
 attribute is used in the eventer node.  For example, to select the
 kqueue eventer (for Mac OS X or modern BSDs):</para>
 
-<example><![CDATA[
+<programlisting><![CDATA[
   <eventer implementation="kqueue" />
-]]></example>
+]]></programlisting>
 
 <para>Theo following eventer implementations exist: kqueue (Mac/BSD), epoll (Linux), ports (Solaris 10+).</para>
 </section>
@@ -246,9 +254,9 @@ descriptor 2.</para>
    the identifying attributes, includeing the uuid are logged to this
    facility.
 
-   <example>
+   <programlisting>
    'C' TIMESTAMP UUID TARGET MODULE NAME
-   </example>
+   </programlisting>
   </para></listitem></varlistentry>
 
   <varlistentry><term>status</term><listitem><para>
@@ -257,9 +265,9 @@ descriptor 2.</para>
    is considered a state change for the check and the new availability
    and new state are logged to this facility.
 
-   <example>
+   <programlisting>
    'S' TIMESTAMP UUID STATE AVAILABILITY DURATION STATUS_MESSAGE
-   </example>
+   </programlisting>
   </para></listitem></varlistentry>
 
   <varlistentry><term>metrics</term><listitem><para>
@@ -269,9 +277,9 @@ descriptor 2.</para>
    The TYPE indicates the datatype the check intended when it was
    observed.
 
-   <example>
+   <programlisting>
    'M' TIMESTAMP UUID NAME TYPE VALUE
-   </example>
+   </programlisting>
 
    <variablelist>
      <varlistentry><term>NAME</term><listitem><para>is the name of the metric
@@ -295,7 +303,9 @@ descriptor 2.</para>
   </varlistentry>
 </variablelist>
 
-<example><![CDATA[
+<example>
+<title>Sample configuration for the log section</title>
+<programlisting><![CDATA[
   <logs>
     <console>
       <outlet name="stderr" />
@@ -312,7 +322,8 @@ descriptor 2.</para>
       </log>
     </feeds>
   </logs>
-]]></example>
+]]></programlisting>
+</example>
 
  <para>In the above example:</para>
  <itemizedlist>
