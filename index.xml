@@ -34,8 +34,8 @@
       communicate.
     </para>
     <para>
-      It is highly suggested that you use a certificate authority to manage the
-      certificates issues to each noitd and stratcond daemon.
+      It is strongly recommended that you use a certificate authority to manage
+      the certificates issued to each noitd and stratcond daemon.
     </para>
     &arch.all;
   </part>
