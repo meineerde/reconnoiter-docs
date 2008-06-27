@@ -27,15 +27,16 @@
   <part id="archecture">
     <title>Architecture</title>
     <para>
-      Both noitd and stratcond make heavy use of SSL certificates. The SSL
-      certificates are used for security purposes, and are required for correct
-      operation. The common names of the certs identify different system 
-      components to each other and must match or the components will fail to 
-      communicate.
+      Both <command>noitd</command> and <command>stratcond</command> make heavy
+      use of SSL certificates. The SSL certificates are used for security 
+      purposes, and are required for correct operation. The common names of the
+      certs identify different system components to each other and must match 
+      or the components will fail to communicate.
     </para>
     <para>
       It is strongly recommended that you use a certificate authority to manage
-      the certificates issued to each noitd and stratcond daemon.
+      the certificates issued to each <command>noitd</command> and 
+      <command>stratcond</command> daemon.
     </para>
     &arch.all;
   </part>
