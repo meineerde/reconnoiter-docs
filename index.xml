@@ -48,9 +48,9 @@
     <title>Code reference</title>
     <chapter id="ref">
       <title>Internals</title>
-      <section><title>Internal Function Refrence</title>
+      <referece><title>Internal Function Refrence</title>
       &gen.all;
-      </section>
+      </reference>
     </chapter>
   </part>
 
