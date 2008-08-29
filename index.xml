@@ -47,8 +47,10 @@
   <part id="reference">
     <title>Code reference</title>
     <reference id="ref">
-      <title>Reference</title>
+      <title>Internals</title>
+      <section><title>Internal Function Refrence</title>
       &gen.all;
+      </section>
     </reference>
   </part>
 
