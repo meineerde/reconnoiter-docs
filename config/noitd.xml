@@ -365,7 +365,7 @@ descriptor 2.
 </section>
 <section id="config.noitd.modules">
   <title>Modules</title>
-  &modules.all;
+  &config.modules.all;
 </section>
 </chapter>
 
