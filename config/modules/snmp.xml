@@ -1,9 +1,82 @@
 <?xml version="1.0"?>
-<section><title>snmp</title><para>The snmp module provides SNMP polling support for reconnoiter.</para><variablelist><varlistentry><term>loader</term><listitem><para>C</para></listitem></varlistentry><varlistentry><term>image</term><listitem><para>snmp.so</para></listitem></varlistentry></variablelist><section><title>Module Configuration</title></section><section><title>Check Configuration</title><variablelist><varlistentry><term>community</term><listitem><variablelist><varlistentry><term>required</term><listitem><para>optional</para></listitem></varlistentry><varlistentry><term>default</term><listitem><para>public</para></listitem></varlistentry><varlistentry><term>allowed</term><listitem><para>.+</para></listitem></varlistentry></variablelist><para>The SNMP community string providing read access.</para></listitem></varlistentry></variablelist><variablelist><varlistentry><term>oid_.+</term><listitem><variablelist><varlistentry><term>required</term><listitem><para>optional</para></listitem></varlistentry><varlistentry><term>default</term><listitem><para></para></listitem></varlistentry><varlistentry><term>allowed</term><listitem><para>.+</para></listitem></varlistentry></variablelist><para>Defines a metric to query.  Key oid_foo will establish a metric called foo.  The value of the parameter should be an OID either in decimal notation or MIB name.</para></listitem></varlistentry></variablelist></section><example>
-      <title>Simple snmp polling of two switchports</title>
-      <para>The following example configures SNMP checks against switchport 1 and 2
+<section>
+  <title>snmp</title>
+  <para>The snmp module provides SNMP polling support for reconnoiter.</para>
+  <variablelist>
+    <varlistentry>
+      <term>loader</term>
+      <listitem>
+        <para>C</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>image</term>
+      <listitem>
+        <para>snmp.so</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <section>
+    <title>Module Configuration</title>
+  </section>
+  <section>
+    <title>Check Configuration</title>
+    <variablelist>
+      <varlistentry>
+        <term>community</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>required</term>
+              <listitem>
+                <para>optional</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>default</term>
+              <listitem>
+                <para>public</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>allowed</term>
+              <listitem>
+                <para>.+</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <para>The SNMP community string providing read access.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <varlistentry>
+        <term>oid_.+</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>required</term>
+              <listitem>
+                <para>optional</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>allowed</term>
+              <listitem>
+                <para>.+</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <para>Defines a metric to query.  Key oid_foo will establish a metric called foo.  The value of the parameter should be an OID either in decimal notation or MIB name.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+  <example>
+    <title>Simple snmp polling of two switchports</title>
+    <para>The following example configures SNMP checks against switchport 1 and 2
       on the switch with the IP address 10.80.116.3.</para>
-      <programlisting>
+    <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
           &lt;module image="snmp" name="snmp"/&gt;
@@ -34,11 +107,11 @@
         &lt;/checks&gt;
       &lt;/noit&gt;
     </programlisting>
-    </example><example>
-      <title>Example using config inheritance to show reuse</title>
-      <para>Accomplising the same goal, but by using reuse:</para>
-
-      <programlisting>
+  </example>
+  <example>
+    <title>Example using config inheritance to show reuse</title>
+    <para>Accomplising the same goal, but by using reuse:</para>
+    <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
           &lt;module image="snmp" name="snmp"/&gt;
@@ -73,4 +146,5 @@
         &lt;/config_templates&gt;
       &lt;/noit&gt;
     </programlisting>
-    </example></section>
+  </example>
+</section>
