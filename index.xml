@@ -45,12 +45,14 @@
     &config.all;
   </part>
   <part id="reference">
-    <title>Code reference</title>
+    <title>Code Reference</title>
     <chapter id="ref">
       <title>Internals</title>
-      <reference><title>Internal Function Refrence</title>
+      <section><title>Internal Functions</title>
+      <reference><title>Function Refrence</title>
       &gen.all;
       </reference>
+      </section>
     </chapter>
   </part>
 
