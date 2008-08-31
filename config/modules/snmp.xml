@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <section>
   <title>snmp</title>
-  <description>
-    <para>The snmp module provides SNMP polling support for reconnoiter.</para>
-  </description>
+  <para>The snmp module provides SNMP polling support for reconnoiter.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>

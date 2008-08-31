@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <section>
   <title>dns</title>
-  <description>
-    <para>The dns module leverages libudns to allow highly concurrent DNS lookups of a variety of DNS RR types.  In the event that you name a dns check <parameter>in-addr.arpa</parameter> with an rtype of <parameter>PTR</parameter>, the result of the query may be used throughout reconnoiter as the identifying hostname of that target.</para>
-    <para>This module provides the <function>inaddrarpa</function> interpolation method which will reverse a dot-delimited IP address.  This is particularly useful for constructing in-addr.arpa queries, but also used for checking blacklists, whitelists and other IP-based DNS databases.</para>
-  </description>
+  <para>The dns module leverages libudns to allow highly concurrent DNS lookups of a variety of DNS RR types.  In the event that you name a dns check <parameter>in-addr.arpa</parameter> with an rtype of <parameter>PTR</parameter>, the result of the query may be used throughout reconnoiter as the identifying hostname of that target.</para>
+  <para>This module provides the <function>inaddrarpa</function> interpolation method which will reverse a dot-delimited IP address.  This is particularly useful for constructing in-addr.arpa queries, but also used for checking blacklists, whitelists and other IP-based DNS databases.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>

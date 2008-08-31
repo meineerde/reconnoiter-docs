@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <section>
   <title>ssh2</title>
-  <description>
-    <para>The ssh2 module allows reconnoiter to connect to servers over ssh protocol 2 and test the fingerprint.</para>
-  </description>
+  <para>The ssh2 module allows reconnoiter to connect to servers over ssh protocol 2 and test the fingerprint.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
