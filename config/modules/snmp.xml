@@ -82,7 +82,7 @@
           &lt;module image="snmp" name="snmp"/&gt;
         &lt;/modules&gt;
         &lt;checks&gt;
-          &lt;switch target="10.80.116.3"&gt;
+          &lt;switch target="10.80.116.3" module="snmp"&gt;
             &lt;config&gt;
               &lt;community&gt;SeKr3t&lt;/community&gt;
               &lt;oid_description&gt;IF-MIB::ifName.%[name]&lt;/oid_description&gt;
