@@ -363,9 +363,9 @@ descriptor 2.
  </itemizedlist>
 </section>
 </section>
-<section id="config.noitd.modules">
+</chapter>
+<chapter id="config.noitd.modules">
   <title>Modules</title>
   &config.modules.all;
-</section>
 </chapter>
 
