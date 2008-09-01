@@ -89,20 +89,4 @@
       &lt;/noit&gt;
     </programlisting>
   </example>
-  <example>
-    <title>Checking labs.omniti.com.</title>
-    <para>The following checks the DNS server residing at 66.225.209.4 for the A record of labs.omniti.com.</para>
-    <programlisting>
-      &lt;noit&gt;
-        &lt;modules&gt;
-          &lt;module image="dns" name="dns"/&gt;
-        &lt;/modules&gt;
-        &lt;checks&gt;
-          &lt;ns1 module="dns" target="66.225.209.4"&gt;
-            &lt;check uuid="3cddb2a8-76ff-11dd-83c8-f75cb8b93bd9" name="labs.omniti.com"/&gt;
-          &lt;/ssh&gt;
-        &lt;/checks&gt;
-      &lt;/noit&gt;
-    </programlisting>
-  </example>
 </section>
