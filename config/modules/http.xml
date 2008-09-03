@@ -200,7 +200,7 @@
             &lt;check uuid="1ecd887a-7896-11dd-b28d-0b4216877f83" name="https"&gt;
               &lt;config&gt;&lt;url&gt;https://labs.omniti.com/&lt;/url&gt;&lt;/config&gt;
             &lt;/check&gt;
-          &lt;/ssh&gt;
+          &lt;/labs&gt;
         &lt;/checks&gt;
       &lt;/noit&gt;
     </programlisting>
