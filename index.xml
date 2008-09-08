@@ -33,9 +33,13 @@
     &config.all;
   </part>
   <part id="reference">
-    <title>Code Reference</title>
+    <title>Reference</title>
+    <reference id="exe">
+      <title>Reconnoiter Command Line Reference</title>
+      &executable.all;
+    </reference>
     <chapter id="ref">
-      <title>Internals</title>
+      <title>Code Reference</title>
       <section><title>Internal Functions</title>
       <reference><title>Function Refrence</title>
       &gen.all;
