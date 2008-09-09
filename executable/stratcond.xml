@@ -11,6 +11,10 @@
     <manvolnum>8</manvolnum>
   </refmeta>
 
+  <refentryinfo>
+    <date>09/08/2008</date>
+  </refentryinfo>
+
   <refnamediv>
     <refname>stratcond</refname>
     <refpurpose>Reconnoiter data collector/aggregator.</refpurpose>

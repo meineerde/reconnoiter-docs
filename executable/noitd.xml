@@ -11,6 +11,10 @@
     <manvolnum>8</manvolnum>
   </refmeta>
 
+  <refentryinfo>
+    <date>09/08/2008</date>
+  </refentryinfo>
+
   <refnamediv>
     <refname>noitd</refname>
     <refpurpose>Reconnoiter scout daemon</refpurpose>
