@@ -1,18 +1,25 @@
 <?xml version="1.0"?>
 <section>
   <title>ssh2</title>
-  <para>The ssh2 module allows reconnoiter to connect to servers over ssh protocol 2 and test the fingerprint.</para>
+  <para>
+    The ssh2 module allows Reconnoiter to connect to servers over ssh 
+    protocol 2 and test the fingerprint.
+  </para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
       <listitem>
-        <para>C</para>
+        <para>
+          C
+        </para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>image</term>
       <listitem>
-        <para>ssh2.so</para>
+        <para>
+          ssh2.so
+        </para>
       </listitem>
     </varlistentry>
   </variablelist>
@@ -29,30 +36,40 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>optional</para>
+                <para>
+                  optional
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>22</para>
+                <para>
+                  22
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>
+                  \d+
+                </para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>The TCP port on which the remote server's ssh service is running.</para>
+          <para>
+            The TCP port on which the remote server's ssh service is running.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Simple ssh polling of 4 machines</title>
-    <para>The following checks ssh on 10.1.2.{3,4,5,6}</para>
+    <para>
+      The following checks ssh on 10.1.2.{3,4,5,6}
+    </para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -70,3 +87,6 @@
     </programlisting>
   </example>
 </section>
+<!--
+vim:ts=2:sw=2:et:
+-->

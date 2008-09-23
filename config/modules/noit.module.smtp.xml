@@ -1,18 +1,24 @@
 <?xml version="1.0"?>
 <section>
   <title>smtp</title>
-  <para>Send an email via an SMTP server.</para>
+  <para>
+    Send an email via an SMTP server.
+  </para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
       <listitem>
-        <para>lua</para>
+        <para>
+          lua
+        </para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>object</term>
       <listitem>
-        <para>noit.module.smtp</para>
+        <para>
+          noit.module.smtp
+        </para>
       </listitem>
     </varlistentry>
   </variablelist>
@@ -29,23 +35,31 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>optional</para>
+                <para>
+                  optional
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>25</para>
+                <para>
+                  25
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>
+                  \d+
+                </para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>Specifies the TCP port to connect to.</para>
+          <para>
+            Specifies the TCP port to connect to.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -57,23 +71,31 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>optional</para>
+                <para>
+                  optional
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>noit.local</para>
+                <para>
+                  noit.local
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>
+                  \d+
+                </para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>Specifies the EHLO parameter.</para>
+          <para>
+            Specifies the EHLO parameter.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -85,7 +107,9 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>optional</para>
+                <para>
+                  optional
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
@@ -97,11 +121,15 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>
+                  \d+
+                </para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>Specifies the envelope sender.</para>
+          <para>
+            Specifies the envelope sender.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -113,17 +141,23 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>required</para>
+                <para>
+                  required
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>
+                  \d+
+                </para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>Specifies the envelope recipient.</para>
+          <para>
+            Specifies the envelope recipient.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -135,30 +169,42 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>optional</para>
+                <para>
+                  optional
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>Subject: Testing</para>
+                <para>
+                  Subject: Testing
+                </para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>
+                  \d+
+                </para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>Specifies the payload sent (on the wire). CR LF DOT CR LF is appended automatically.</para>
+          <para>
+            Specifies the payload sent on the wire. CR LF DOT CR LF is 
+            appended automatically.
+          </para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Send an email to test SMTP service.</title>
-    <para>The following example sends an email via 10.80.117.6 from test@omniti.com to devnull@omniti.com</para>
+    <para>
+      The following example sends an email via 10.80.117.6 from test@omniti.com
+      to devnull@omniti.com
+    </para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -179,3 +225,6 @@
       </programlisting>
   </example>
 </section>
+<!--
+vim:ts=2:sw=2:et:
+-->
