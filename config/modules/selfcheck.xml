@@ -59,7 +59,7 @@
           &lt;module image="selfcheck" name="selfcheck"/&gt;
         &lt;/modules&gt;
         &lt;checks&gt;
-          &lt;check uuid="6e65ffdc-f174-11dd-86fe-b7da9645ce7c" target="10.225.209.90"/&gt;
+          &lt;check uuid="6e65ffdc-f174-11dd-86fe-b7da9645ce7c" target="10.225.209.90" period="5000" timeout="4000"/&gt;
         &lt;/checks&gt;
       &lt;/noit&gt;
     </programlisting>
