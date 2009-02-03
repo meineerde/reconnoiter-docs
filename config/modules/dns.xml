@@ -1,19 +1,8 @@
 <?xml version="1.0"?>
 <section>
   <title>dns</title>
-  <para>
-    The dns module leverages libudns to allow highly concurrent DNS lookups of
-    a variety of DNS RR types.  In the event that you name a dns check 
-    <parameter>in-addr.arpa</parameter> with an rtype of 
-    <parameter>PTR</parameter>, the result of the query may be used throughout 
-    reconnoiter as the identifying hostname of that target.
-  </para>
-  <para>
-    This module provides the <function>inaddrarpa</function> interpolation 
-    method which will reverse a dot-delimited IP address.  This is particularly
-    useful for constructing in-addr.arpa queries, but also used for checking 
-    blacklists, whitelists and other IP-based DNS databases.
-  </para>
+  <para>The dns module leverages libudns to allow highly concurrent DNS lookups of a variety of DNS RR types.  In the event that you name a dns check <parameter>in-addr.arpa</parameter> with an rtype of <parameter>PTR</parameter>, the result of the query may be used throughout reconnoiter as the identifying hostname of that target.</para>
+  <para>This module provides the <function>inaddrarpa</function> interpolation method which will reverse a dot-delimited IP address.  This is particularly useful for constructing in-addr.arpa queries, but also used for checking blacklists, whitelists and other IP-based DNS databases.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
@@ -57,11 +46,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The domain name server to query. If the name of the check is 
-            in-addr.arpa, the system default nameserver is used.  Otherwise, the
-            nameserver is the %[target] of the the check.
-          </para>
+          <para>The domain name server to query. If the name of the check is in-addr.arpa, the system default nameserver is used.  Otherwise, the nameserver is the %[target] of the the check.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -89,9 +74,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The DNS class of the query. IN: Internet, CH: Chaos, HS: Hesoid.
-          </para>
+          <para>The DNS class of the query. IN: Internet, CH: Chaos, HS: Hesoid.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -115,16 +98,11 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  (A|AAAA|TXT|MX|SOA|CNAME|PTR|NS|MB|MD|MF|MG|MR)
-                </para>
+                <para>(A|AAAA|TXT|MX|SOA|CNAME|PTR|NS|MB|MD|MF|MG|MR)</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The DNS resource record type of the query.  If the name of the 
-            check is in-addr.arpa, the default is PTR, otherwise it is A.
-          </para>
+          <para>The DNS resource record type of the query.  If the name of the check is in-addr.arpa, the default is PTR, otherwise it is A.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -142,9 +120,7 @@
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>
-                  %[name]|%[:inaddrarpa:target].in-addr.arpa
-                </para>
+                <para>%[name]|%[:inaddrarpa:target].in-addr.arpa</para>
               </listitem>
             </varlistentry>
             <varlistentry>
@@ -154,22 +130,14 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The query to send.  If the name of the check is in-addr.arpa, the 
-            reverse IP octet notation of in-addr.arpa syntax is synthesized by 
-            default.  Otherwise the default query is the name of the check 
-            itself.
-          </para>
+          <para>The query to send.  If the name of the check is in-addr.arpa, the reverse IP octet notation of in-addr.arpa syntax is synthesized by default.  Otherwise the default query is the name of the check itself.</para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Establishing PTR records for hosts.</title>
-    <para>
-      The following established names for targets 10.1.2.{3,4,5,6} using the 
-      local nameserver (10.1.2.2) that provides service for that network.
-    </para>
+    <para>The following established names for targets 10.1.2.{3,4,5,6} using the local nameserver (10.1.2.2) that provides service for that network.</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -191,10 +159,7 @@
   </example>
   <example>
     <title>Checking labs.omniti.com.</title>
-    <para>
-      The following checks the DNS server residing at 66.225.209.4 for the A 
-      record of labs.omniti.com.
-    </para>
+    <para>The following checks the DNS server residing at 66.225.209.4 for the A record of labs.omniti.com.</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -209,6 +174,3 @@
     </programlisting>
   </example>
 </section>
-<!--
-vim:ts=2:sw=2:et:
--->

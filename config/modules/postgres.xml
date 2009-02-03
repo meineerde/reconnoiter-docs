@@ -1,25 +1,18 @@
 <?xml version="1.0"?>
 <section>
   <title>postgres</title>
-  <para>
-    The postgres module allows queries to be performed against targets as 
-    checks.  The results of the query are used as metrics.
-  </para>
+  <para>The postgres module allows queries to be performaed against targets as checks.  The results of the query are used as metrics.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
       <listitem>
-        <para>
-          C
-        </para>
+        <para>C</para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>image</term>
       <listitem>
-        <para>
-          postgres.so
-        </para>
+        <para>postgres.so</para>
       </listitem>
     </varlistentry>
   </variablelist>
@@ -36,25 +29,17 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  required
-                </para>
+                <para>required</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The connect string for PostgreSQL.  The syntax of this string is 
-            documented in your PostgreSQL documentation. See Database 
-            Connection Control Functions.
-          </para>
+          <para>The connect string for PostgreSQL.  The syntax of this string is documented in your PostgreSQL documentation. See Database Connection Control Functions.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -66,34 +51,24 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  required
-                </para>
+                <para>required</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The query that will be executed.
-          </para>
+          <para>The query that will be executed.</para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Tracking PostgreSQL database sizes.</title>
-    <para>
-      This will track the sizes of all databases on 10.225.209.35 and 
-      10.225.209.56. We will connect to the postgres database as the user 
-      "noit" with password "noit." We only run this check every 5 minutes.
-    </para>
+    <para>This will track the sizes of all databases on 10.225.209.35 and 10.225.209.56. We will connect to the postgres database as the user "noit" with password "noit." We only run this check every 5 minutes.</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -115,6 +90,3 @@
     </programlisting>
   </example>
 </section>
-<!--
-vim:ts=2:sw=2:et:
--->

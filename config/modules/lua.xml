@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <section>
   <title>lua</title>
-  <para>
-    The lua module is a loader that allows the authoring of checks in Lua.
-  </para>
+  <para>The lua module is a loader that allows the authoring of checks in Lua.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
@@ -44,10 +42,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            This is the lua load path.  See the lua manual for more details on
-            meaning and syntax.
-          </para>
+          <para>This is the lua load path.  See the lua manual for more details on meaning and syntax.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -57,9 +52,7 @@
   </section>
   <example>
     <title>Loading the lua loader.</title>
-    <para>
-      This example loads the lua VM and registers it as a module loader.
-    </para>
+    <para>This example loads the lua VM and registers it as a module loader.</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -73,6 +66,3 @@
     </programlisting>
   </example>
 </section>
-<!--
-vim:ts=2:sw=2:et:
--->

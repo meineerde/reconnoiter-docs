@@ -1,34 +1,20 @@
 <?xml version="1.0"?>
 <section>
   <title>resmon</title>
-  <para>
-    The resmon module performs services checks against a Resmon service.
-  </para>
-  <para>
-    <ulink url="https://labs.omniti.com/trac/resmon"><citetitle>Resmon</citetitle></ulink>
-    is a lightweight resource monitor that exposes health of services over HTTP
-    in XML.
-  </para>
-  <para>
-    This module rides on the http module and provides a secondary phase of XML
-    parsing on the contents.  It extracts Resmon status messages into metrics 
-    that can be trended.
-  </para>
+  <para>The resmon module performs services checks against a Resmon service.</para>
+  <para><ulink url="https://labs.omniti.com/trac/resmon"><citetitle>Resmon</citetitle></ulink> is a light-weight resource monitor that exposes health of services over HTTP in XML.</para>
+  <para>This module rides on the http module and provides a secondary phase of XML parsing on the contents that extracts Resmon status messages into metrics that can be trended.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
       <listitem>
-        <para>
-          C
-        </para>
+        <para>C</para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>image</term>
       <listitem>
-        <para>
-          http.so
-        </para>
+        <para>http.so</para>
       </listitem>
     </varlistentry>
   </variablelist>
@@ -42,24 +28,17 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  http://target:81/
-                </para>
+                <para>http://target:81/</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The default URL to be used by checks that do not specify an explicit
-            URL.
-          </para>
+          <para>The default URL to be used by checks that do not specify an explicit URL.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -71,26 +50,17 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the certificate authorities that 
-            should be loaded to validate the remote certificate for SSL checks.
-            This is used for SSL checks if this parameter is not set explicitly 
-            in the check config.
-          </para>
+          <para>A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for SSL checks).  This is used for SSL checks if this paramter is not set explicitly in the check config.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -102,25 +72,17 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the client certificates that will be
-            presented to the remote server for SSL checks.  This is used for SSL
-            checks if this parameter is not set explicitly in the check config.
-          </para>
+          <para>A path to a file containing all the client certificate that will be presented to the remote server (for SSL checks).  This is used for SSL checks if this paramter is not set explicitly in the check config.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -135,24 +97,17 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  required
-                </para>
+                <para>required</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The URL including schema and hostname (as you would type into a 
-            browser's location bar).
-          </para>
+          <para>The URL including schema and hostname (as you would type into a browser's location bar).</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -164,24 +119,17 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the certificate authorities that 
-            should be loaded to validate the remote certificate for SSL checks.
-          </para>
+          <para>A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for SSL checks).</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -193,33 +141,24 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  .+
-                </para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the client certificates that will be
-            presented to the remote server for SSL checks.
-          </para>
+          <para>A path to a file containing all the client certificate that will be presented to the remote server (for SSL checks).</para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Checking resmon services on OmniTI Labs.</title>
-    <para>
-      This example checks the Resmon service on OmniTI Labs.
-    </para>
+    <para>This example checks the Resmon service on OmniTI Labs.</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -234,6 +173,3 @@
     </programlisting>
   </example>
 </section>
-<!--
-vim:ts=2:sw=2:et:
--->

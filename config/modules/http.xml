@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <section>
   <title>http</title>
-  <para>
-    The http module performs GET requests over either HTTP or HTTPS and 
-    checks the return code.
-  </para>
+  <para>The http module performs GET requests over either HTTP or HTTPS and checks the return code.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
@@ -39,10 +36,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The default URL to be used by checks that do not specify an 
-            explicit URL.
-          </para>
+          <para>The default URL to be used by checks that do not specify an explicit URL.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -64,12 +58,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the certificate authorities that 
-            should be loaded to validate the remote certificate (for SSL 
-            checks).  This is used for SSL checks if this paramter is not set 
-            explicitly in the check config.
-          </para>
+          <para>A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for SSL checks).  This is used for SSL checks if this paramter is not set explicitly in the check config.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -91,12 +80,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the client certificate that will 
-            be presented to the remote server (for SSL checks).  This is used 
-            for SSL checks if this paramter is not set explicitly in the check
-            config.
-          </para>
+          <para>A path to a file containing all the client certificate that will be presented to the remote server (for SSL checks).  This is used for SSL checks if this paramter is not set explicitly in the check config.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -121,10 +105,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The URL including schema and hostname (as you would type into a 
-            browser's location bar).
-          </para>
+          <para>The URL including schema and hostname (as you would type into a browser's location bar).</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -146,11 +127,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the certificate authorities that 
-            should be loaded to validate the remote certificate (for SSL 
-            checks).
-          </para>
+          <para>A path to a file containing all the certificate authorities that should be loaded to validate the remote certificate (for SSL checks).</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -172,10 +149,7 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            A path to a file containing all the client certificate that will 
-            be presented to the remote server (for SSL checks).
-          </para>
+          <para>A path to a file containing all the client certificate that will be presented to the remote server (for SSL checks).</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -203,20 +177,14 @@
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The HTTP code that is expected.  If the code received matches 
-            this code, the check is marked as "good," if it does not match, 
-            it is marked as "bad."
-          </para>
+          <para>The HTTP code that is expected.  If the code received matches this code, the check is marked as "good," if it does not match, it is marked as "bad."</para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Checking an HTTP and HTTPS URL.</title>
-    <para>
-      This example checks the OmniTI Labs website over both HTTP and HTTPS.
-    </para>
+    <para>This example checks the OmniTI Labs website over both HTTP and HTTPS..</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -238,6 +206,3 @@
     </programlisting>
   </example>
 </section>
-<!--
-vim:ts=2:sw=2:et:
--->

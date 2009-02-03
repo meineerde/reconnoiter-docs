@@ -1,26 +1,18 @@
 <?xml version="1.0"?>
 <section>
   <title>ping_icmp</title>
-  <para>
-    The ping_icmp module provides ICMP checks against targets.  It sends a 
-    series of ICMP requests and waits for their responses, tallying their 
-    turn-around time.
-  </para>
+  <para>The ping_icmp module provide ICMP checks against targets.  It sends a series of ICMP requests and waits for their responses tallying their turn-around time.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
       <listitem>
-        <para>
-          C
-        </para>
+        <para>C</para>
       </listitem>
     </varlistentry>
     <varlistentry>
       <term>image</term>
       <listitem>
-        <para>
-          ping_icmp.so
-        </para>
+        <para>ping_icmp.so</para>
       </listitem>
     </varlistentry>
   </variablelist>
@@ -37,31 +29,23 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>
-                  2000
-                </para>
+                <para>2000</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  \d+
-                </para>
+                <para>\d+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The number of milliseconds between ICMP requests.
-          </para>
+          <para>The number of milliseconds between ICMP requests.</para>
         </listitem>
       </varlistentry>
     </variablelist>
@@ -73,40 +57,30 @@
             <varlistentry>
               <term>required</term>
               <listitem>
-                <para>
-                  optional
-                </para>
+                <para>optional</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>
-                  5
-                </para>
+                <para>5</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>
-                  \d+
-                </para>
+                <para>\d+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>
-            The number of ICMP requests to send during a single check.
-          </para>
+          <para>The number of ICMP requests to send during a single check.</para>
         </listitem>
       </varlistentry>
     </variablelist>
   </section>
   <example>
     <title>Ping checks against a host</title>
-    <para>
-      Ping 4.2.2.1 once per second for ten seconds recurring every 60 seconds.
-    </para>
+    <para>Ping 4.2.2.1 once a second for ten seconds recurring every 60 seconds.</para>
     <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
@@ -121,6 +95,3 @@
     </programlisting>
   </example>
 </section>
-<!--
-vim:ts=2:sw=2:et:
--->
