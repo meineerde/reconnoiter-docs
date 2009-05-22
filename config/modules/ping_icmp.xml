@@ -87,7 +87,11 @@
           &lt;module image="ping_icmp" name="ping_icmp"/&gt;
         &lt;/modules&gt;
         &lt;checks&gt;
-          &lt;ping module="ping_icmp" period="60000" count="10" interval="1000"&gt;
+          &lt;ping module="ping_icmp" period="60000"&gt;
+            &lt;config&gt;
+              &lt;count&gt;10&lt;/count&gt;
+              &lt;interval&gt;1000&lt;/interval&gt;
+            &lt;/config&gt;
             &lt;check uuid="5b9fab60-77d4-11dd-99a4-97df794be4c8" target="4.2.2.1"/&gt;
           &lt;/ping&gt;
         &lt;/checks&gt;
