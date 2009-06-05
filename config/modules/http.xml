@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <section>
   <title>http</title>
-  <para>The http module performs GET requests over either HTTP or HTTPS and checks the return code.</para>
+  <para>The http module performs GET requests over either HTTP or HTTPS and checks the return code and optionally the body.</para>
   <variablelist>
     <varlistentry>
       <term>loader</term>
@@ -167,17 +167,39 @@
             <varlistentry>
               <term>default</term>
               <listitem>
-                <para>200</para>
+                <para>^200$</para>
               </listitem>
             </varlistentry>
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>[1-5][0-9][0-9]</para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
-          <para>The HTTP code that is expected.  If the code received matches this code, the check is marked as "good," if it does not match, it is marked as "bad."</para>
+          <para>The HTTP code that is expected.  If the code received does not match this regular expression, the check is marked as "bad."</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <varlistentry>
+        <term>body</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>required</term>
+              <listitem>
+                <para>optional</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>allowed</term>
+              <listitem>
+                <para>.+</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <para>This regular expression is matched against the body of the response.  If a match is not found, the check will be marked as "bad."</para>
         </listitem>
       </varlistentry>
     </variablelist>
