@@ -151,7 +151,9 @@
       and must be configured with parameters similar to the ones below.  Like the snmptrap 
       module the collectd disregards the timeout value completely, but uses the period to
       batch all the checks in one commit.  If there are &gt;1 metrics within the period the
-      check is marked as G and A for state and availability respectively.</para>
+      check is marked as G and A for state and availability respectively.  The first program
+      listing shows a collectd configuration and the second listing shows the corresponding
+      check configuration in reconnoiter.</para>
     <programlisting>
       &lt;Plugin network&gt;
         &lt;Server "127.0.0.1" "25826"&gt;
@@ -160,7 +162,8 @@
           Password "s3cr3t"
         &lt;/Server&gt;
       &lt;/Plugin&gt;
-
+      </programlisting>
+    <programlisting>
       &lt;noit&gt;
         &lt;modules&gt;
           &lt;module image="collectd" name="collectd"&gt;
@@ -176,6 +179,6 @@
                  period="60000" timeout="30000"/&gt;
         &lt;/checks&gt;
       &lt;/noit&gt;
-    </programlisting>
+      </programlisting>
   </example>
 </section>
