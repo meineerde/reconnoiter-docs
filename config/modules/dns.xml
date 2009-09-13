@@ -152,7 +152,7 @@
             &lt;check uuid="2dd79110-76ff-11dd-9b54-739adc274a93" target="10.1.2.4"/&gt;
             &lt;check uuid="5627560a-76ff-11dd-941f-4b75679cb908" target="10.1.2.5"/&gt;
             &lt;check uuid="5fdcb8de-76ff-11dd-ae16-2740afc178ae" target="10.1.2.6"/&gt;
-          &lt;/ssh&gt;
+          &lt;/ptr&gt;
         &lt;/checks&gt;
       &lt;/noit&gt;
     </programlisting>
@@ -168,7 +168,7 @@
         &lt;checks&gt;
           &lt;ns1 module="dns" target="66.225.209.4"&gt;
             &lt;check uuid="3cddb2a8-76ff-11dd-83c8-f75cb8b93bd9" name="labs.omniti.com"/&gt;
-          &lt;/ssh&gt;
+          &lt;/ns1&gt;
         &lt;/checks&gt;
       &lt;/noit&gt;
     </programlisting>
