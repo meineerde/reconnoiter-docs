@@ -32,6 +32,10 @@
     <title>Configuration</title>
     &config.all;
   </part>
+  <part id="operation">
+    <title>Operation</title>
+    &operation.all;
+  </part>
   <part id="reference">
     <title>Reference</title>
     <reference id="exe">
