@@ -147,4 +147,97 @@ instance.
 </section>
 
 </section>
+
+<section>
+<title>Manipulating Filters</title>
+
+<section>
+<title>/filters/show/</title>
+  <variablelist>
+    <varlistentry>
+      <term>method</term>
+      <listitem><code>GET</code></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>uri</term>
+      <listitem><code>/filters/show/&lt;path/&gt;&lt;filterset&gt;</code></listitem>
+    </varlistentry>
+  </variablelist>
+  <para>
+  This call returns an XML document describing the current configuration 
+  of the specified filterset.  The <code>filterset</code> specified is located
+  under the optional <code>path</code>.  If the check exists, but it under
+  another path, a HTTP 403 code is returned.  If the check does not exist,
+  a HTTP 404 code is returned.
+  </para>
+
+  <example>
+    <title>REST /filters/show XML output.</title>
+    <para>Output from an HTTP GET of <code>/filters/show/default</code></para>
+    <programlisting><![CDATA[
+<?xml version="1.0" encoding="utf8"?>
+<filterset>
+  <rule type="deny" module="^ping_icmp$" metric="^(?:minimum|maximum|count)$"/>
+</filterset>
+    ]]></programlisting>
+  </example>
+</section>
+
+<section>
+<title>/filters/set/</title>
+  <variablelist>
+    <varlistentry>
+      <term>method</term>
+      <listitem><code>PUT</code></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>uri</term>
+      <listitem><code>/filters/set/&lt;path/&gt;&lt;filterset&gt;</code></listitem>
+    </varlistentry>
+  </variablelist>
+  <para>
+  This call accepts a document describing a filterset.  That filterset is
+  instantiated with the name <code>filterset</code> specified in the URL.
+  If the filterset exists, but is not under the provided optional
+  <code>path</code> a HTTP 403 code is returned.  If the filterset already
+  exists under the specified <code>path</code>, the filterset is replaced
+  with the configuration submitted.
+  On success, a HTTP 200 is returned and an XML documented that matches the
+  format of the <code>/check/show</code> REST command.
+  The input is as follows:
+  </para>
+
+  <example>
+    <title>REST /filtert/set XML input.</title>
+    <programlisting><![CDATA[
+<?xml version="1.0" encoding="utf8"?>
+<filterset>
+  <rule type="deny" module="^ping_icmp$" metric="^(?:minimum|maximum|count)$"/>
+</filterset>
+    ]]></programlisting>
+  </example>
+</section>
+<section>
+<title>/filters/delete/</title>
+  <variablelist>
+    <varlistentry>
+      <term>method</term>
+      <listitem><code>DELETE</code></listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>uri</term>
+      <listitem><code>/filters/delete/&lt;path/&gt;&lt;filterset&gt;</code></listitem>
+    </varlistentry>
+  </variablelist>
+  <para>
+  This call returns deletes the specified filterset.  If the filterset does
+  not exist, then a HTTP 404 code is returned.  If the filterset exists, but
+  is outside of the optional <code>path</code>, then a HTTP 403 code is
+  returned.  Otherwise, the specified filterset is removed from the system
+  and a HTTP 200 is returned.  Any response payload returned should be
+  ignored by the client.
+  </para>
+</section>
+
+</section>
 </section>
