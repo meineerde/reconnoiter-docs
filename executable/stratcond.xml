@@ -29,6 +29,7 @@
       <arg choice="opt">-t <replaceable>path</replaceable></arg>
       <arg choice="opt">-d</arg>
       <arg choice="opt">-D</arg>
+      <arg choice="opt">-s</arg>
       <arg choice="opt">-h</arg>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -90,6 +91,14 @@
       <para>
         Enables the debug output facility despite configuration to the
         contrary.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry><term><option>-s</option></term>
+    <listitem>
+      <para>
+        Disables pulling for durable logs from noits and subsequent
+        loading of data into the database.
       </para>
     </listitem>
   </varlistentry>
