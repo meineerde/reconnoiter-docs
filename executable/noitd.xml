@@ -29,6 +29,8 @@
       <arg choice="opt">-t <replaceable>path</replaceable></arg>
       <arg choice="opt">-d</arg>
       <arg choice="opt">-D</arg>
+      <arg choice="opt">-l <replaceable>logstream</replaceable></arg>
+      <arg choice="opt">-L <replaceable>logstream</replaceable></arg>
       <arg choice="opt">-h</arg>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -72,6 +74,24 @@
         will write to this file.  The default location of the configuration
         file is <filename>noitd.conf</filename> in the sysconfdir specified
         at build time.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry><term><option>-l</option></term>
+    <listitem>
+      <para>
+        Marks the enabled bit for the specified log stream.  This enables
+        the stream even if it is disabled in the configuration file.  It
+        must exist in the configuration file.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry><term><option>-L</option></term>
+    <listitem>
+      <para>
+        Disables the enabled bit for the specified log stream.  This disables
+        the stream even if it is enabled in the configuration file.  It
+        must exist in the configuration file.
       </para>
     </listitem>
   </varlistentry>
