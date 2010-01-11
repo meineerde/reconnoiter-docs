@@ -125,7 +125,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>^(?:aes256-cbc|aes192-cbc|aes128-cbc|blowfish-cbc|arcfour|cast128-cbc|3des-cbc|none)$</para>
+                <para>^(?:aes256-ctr|aes192-ctr|aes128-ctr|aes256-cbc|aes192-cbc|aes128-cbc|blowfish-cbc|arcfour128|arcfour|cast128-cbc|3des-cbc|none)$</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -153,7 +153,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>^(?:aes256-cbc|aes192-cbc|aes128-cbc|blowfish-cbc|arcfour|cast128-cbc|3des-cbc|none)$</para>
+                <para>^(?:aes256-ctr|aes192-ctr|aes128-ctr|aes256-cbc|aes192-cbc|aes128-cbc|blowfish-cbc|arcfour128|arcfour|cast128-cbc|3des-cbc|none)$</para>
               </listitem>
             </varlistentry>
           </variablelist>
