@@ -97,7 +97,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>^(?:ssh-dss|ssh-rsa)$</para>
+                <para>^(?:ssh-dsa|ssh-rsa)$</para>
               </listitem>
             </varlistentry>
           </variablelist>
