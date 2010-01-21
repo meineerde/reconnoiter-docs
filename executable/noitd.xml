@@ -12,7 +12,7 @@
   </refmeta>
 
   <refentryinfo>
-    <date>09/08/2008</date>
+    <date>21/01/2010</date>
   </refentryinfo>
 
   <refnamediv>
@@ -31,6 +31,7 @@
       <arg choice="opt">-D</arg>
       <arg choice="opt">-l <replaceable>logstream</replaceable></arg>
       <arg choice="opt">-L <replaceable>logstream</replaceable></arg>
+      <arg choice="opt">-M</arg>
       <arg choice="opt">-h</arg>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -111,6 +112,14 @@
       <para>
         Enables the debug output facility despite configuration to the
         contrary.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry><term><option>-M</option></term>
+    <listitem>
+      <para>
+        Instructs <command>noitd</command> to exit immediately if there
+        where any problems loading specified modules.
       </para>
     </listitem>
   </varlistentry>

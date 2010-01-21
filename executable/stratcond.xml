@@ -24,6 +24,7 @@
     <cmdsynopsis>
       <command>stratcond</command>
       <arg choice="opt">-c</arg>
+      <arg choice="opt">-M</arg>
       <arg choice="opt">-u <replaceable>user</replaceable></arg>
       <arg choice="opt">-g <replaceable>group</replaceable></arg>
       <arg choice="opt">-t <replaceable>path</replaceable></arg>
@@ -111,6 +112,14 @@
       <para>
         Enables the debug output facility despite configuration to the
         contrary.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry><term><option>-M</option></term>
+    <listitem>
+      <para>
+        Instructs <command>noitd</command> to exit immediately if there
+        where any problems loading specified modules.
       </para>
     </listitem>
   </varlistentry>
