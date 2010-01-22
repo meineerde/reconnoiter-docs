@@ -33,6 +33,7 @@
       <arg choice="opt">-l <replaceable>logstream</replaceable></arg>
       <arg choice="opt">-L <replaceable>logstream</replaceable></arg>
       <arg choice="opt">-s</arg>
+      <arg choice="opt">-r</arg>
       <arg choice="opt">-h</arg>
     </cmdsynopsis>
   </refsynopsisdiv>
@@ -128,6 +129,14 @@
       <para>
         Disables pulling for durable logs from noits and subsequent
         loading of data into the database.
+      </para>
+    </listitem>
+  </varlistentry>
+  <varlistentry><term><option>-r</option></term>
+    <listitem>
+      <para>
+        Disables pulling for transient logs from noits and subsequent
+        submission to the message queue.
       </para>
     </listitem>
   </varlistentry>
