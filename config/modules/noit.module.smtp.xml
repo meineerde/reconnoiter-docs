@@ -69,7 +69,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -97,7 +97,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -119,7 +119,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
@@ -147,7 +147,7 @@
             <varlistentry>
               <term>allowed</term>
               <listitem>
-                <para>\d+</para>
+                <para>.+</para>
               </listitem>
             </varlistentry>
           </variablelist>
