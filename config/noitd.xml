@@ -225,12 +225,27 @@ requires several attributes to be useful:
    implementation).
   </para></listitem></varlistentry>
 
+  <varlistentry><term>debug</term><listitem><para>
+   "debug" (boolean: &lt;true|false&gt;, default false) that dictates
+   whether or not the file:line number of the callee will be included
+   in the log output.  This only applies loggers that have write
+   operations (like files and jlogs).
+  </para></listitem></varlistentry>
+
   <varlistentry><term>disabled</term><listitem><para>
    "disabled" (boolean: &lt;true|false&gt;, default false) that dictates
    whether the log implmenation will actually write anything.  If set
    to true, the log will be silences and will not propagate input to
    any attached outlets.
   </para></listitem></varlistentry>
+
+  <varlistentry><term>timestamps</term><listitem><para>
+   "debug" (boolean: &lt;true|false&gt;, default false) that dictates
+   whether or not a microsecond granular time will be included
+   in the log output.  This only applies loggers that have write
+   operations (like files and jlogs).
+  </para></listitem></varlistentry>
+
 </variablelist>
 <para>
 Within a &lt;log&gt; element, zero, one or many &lt;outlet&gt; elements may be
@@ -242,7 +257,7 @@ propagated to the &lt;outlet&gt;.
 </para>
 <para>
 There is an implicit log named "stderr" that is attached to file
-descriptor 2.
+descriptor 2 that has timestamps enabled.
 </para>
 
 <section id="config.noitd.section.logs.special">
