@@ -246,6 +246,24 @@ requires several attributes to be useful:
    operations (like files and jlogs).
   </para></listitem></varlistentry>
 
+  <varlistentry><term>rotate_seconds</term><listitem><para>
+   "rotate_seconds" (integer: default unset, minimum 600) that specifies
+   how many seconds of data the given log file should contain.  Every
+   "rotate_seconds" seconds (aligned with UNIX epoch), the log will be
+   rotated to a file of the same name with the current UNIX timestamp
+   dot-appended.  This can be used in combination with "rotate_bytes"
+   for rather interesting results.
+  </para></listitem></varlistentry>
+
+  <varlistentry><term>rotate_bytes</term><listitem><para>
+   "rotate_bytes" (integer: default unset, minimum 102400) that specifies
+   the maximum number of bytes the file may contain before rotation is
+   applied.  This is not enforced after each write, but instead
+   the file size is monitored "frequently" and rotation applied.  This
+   can mean that the file can grow slightly larger than the specified
+   amount.  This can be used in combination with "rotate_seconds" for
+   rather interesting results.
+  </para></listitem></varlistentry>
 </variablelist>
 <para>
 Within a &lt;log&gt; element, zero, one or many &lt;outlet&gt; elements may be
