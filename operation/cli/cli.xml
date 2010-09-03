@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section>
+  <title>Interactive Console Command Line Operation</title>
+  <para>
+      This section serves to document the basic methods of operation
+      available through the interactive console's command line interface.  
+      It is currently in rough draft status.
+  </para>
+
+  <section>
+    <title>General Operational Principles</title>
+    <para>
+      The command line interface to the system available through the 
+      interactive console operates in a fashion similar to Cisco's IOS &trade;, 
+      in that there are various "levels" or "sets"/"sub-sets" of commands 
+      within the interface.  Operations and operands may be tab-completed 
+      or abbreviated to their un-ambiguous form as needed or desired 
+      (analogous to "configure terminal" becoming "conf t" in common IOS 
+      usage).
+    </para>
+  </section>
+
+  <section>
+    <title>Accessing the Interactive Console</title>
+    <para>
+      The interactive console is accessed by telneting to the configured
+      access port on the host running <command>noitd</command>.  By default this is
+      port 32322.  The applicable configuration parameter in the <command>noitd.conf</command>
+      XML file is the port attribute of the "listener" element, e.g.
+      <programlisting><![CDATA[
+      <listener address="*" port="32322">
+        ]]></programlisting>. Please see the configuration section of
+      the manual for more information.
+    </para>
+  </section>
+
+  <section>
+    <title>Basic Command List</title>
+    <para>
+      noit# help
+      = Topics =
+      ==&gt; 'module'
+
+      = Commands =
+      ==&gt; 'apply'
+      ==&gt; 'configure'
+      ==&gt; 'exit'
+      ==&gt; 'no'
+      ==&gt; 'reload'
+      ==&gt; 'restart'
+      ==&gt; 'show'
+      ==&gt; 'shutdown'
+      ==&gt; 'watch'
+      ==&gt; 'write'
+      noit# help module
+      Help for 'module':
+      = Loaders and Modules =
+      lua
+      ping_icmp
+      smtp
+      ssh2
+      varnish
+      selfcheck
+      resmon
+      http
+      snmp
+      noit# configure {tab pressed twice}
+      ==&gt; 'apply'
+      ==&gt; 'terminal'
+      incomplete command.
+      noit# conf t
+      noit(conf:/)# ls
+      == Section Settings ==
+      @lockfile: /var/run/noitd.lock
+      == Subsections ==
+      eventer
+      logs
+      modules
+      listeners
+      rest
+      checks
+      filtersets
+      config_templates
+      noit(conf:/)# help
+      -&gt; 'terminal'
+      = Topics =
+      ==&gt; 'module'
+
+      = Commands =
+      ==&gt; 'apply'
+      ==&gt; 'attribute'
+      ==&gt; 'cd'
+      ==&gt; 'check'
+      ==&gt; 'config'
+      ==&gt; 'exit'
+      ==&gt; 'filterset'
+      ==&gt; 'ls'
+      ==&gt; 'no'
+      ==&gt; 'section'
+      ==&gt; 'write'
+    </para>
+  </section>
+      
+</section>
+<!--
+vim:ts=2:sw=2:et:
+-->
