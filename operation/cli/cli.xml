@@ -104,12 +104,56 @@
 
       <variablelist>
         <title>Command Descriptions</title>
+
         <varlistentry>
           <term>help</term>
           <listitem>
             <para><command>help</command> provides brief help information appropriate to a given context.</para>
           </listitem>
         </varlistentry>
+        
+        <varlistentry>
+          <term>exit</term>
+          <listitem>
+            <para><command>exit</command> terminates the interactive session..</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>configure</term>
+          <listitem>
+            <para><command>configure</command> causes the session to enter configuration mode if used with the <command>terminal</command> argument or FIXME: does something with apply, not sure what.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>write</term>
+          <listitem>
+            <para><command>write</command> writes the current operating configuration to: the permanent configuration store (<command>noitd.conf</command> by default, in the location specified either at startup with -c or in the default compile-time system directory) with <command>file</command> argument (<command>memory</command> is an alias), or to the current interactive display with the <command>terminal</command> argument.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>reload</term>
+          <listitem>
+            <para><command>reload</command> causes <command>noitd</command> to reload configuration information from the permanent configuration store (<command>noitd.conf</command> by default, in the location specified either at startup with -c or in the default compile-time system directory).</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>restart</term>
+            <listitem>
+              <para><command>restart</command> causes <command>noitd</command> to restart, re-reading all configuration from the permanent configuration store in the process. As part of restarting, the current interactive session is terminated.</para>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>shutdown</term>
+            <listitem>
+              <para><command>shutdown</command> causes <command>noitd</command> to shut down entirely.</para>
+            </listitem>
+        </varlistentry>
+
       </variablelist>
     </para>
   </section>
