@@ -25,7 +25,7 @@
     <para>
       The interactive console is accessed by telneting to the configured
       access port on the host running <command>noitd</command>.  By default this is
-      port 32322.  The applicable configuration parameter in the <command>noitd.conf</command>
+      port 32322.  The applicable configuration parameter in the <filename>noitd.conf</filename>
       XML file is the port attribute of the "listener" element, e.g.:
       <programlisting><![CDATA[
       <listener address="*" port="32322">
@@ -150,14 +150,14 @@
         <varlistentry>
           <term>write</term>
           <listitem>
-            <para><command>write</command> writes the current operating configuration to: the permanent configuration store (<command>noitd.conf</command> by default, in the location specified either at startup with -c or in the default compile-time system directory) with <command>file</command> argument (<command>memory</command> is an alias), or to the current interactive display with the <command>terminal</command> argument.</para>
+            <para><command>write</command> writes the current operating configuration to: the permanent configuration store (<filename>noitd.conf</filename> by default, in the location specified either at startup with -c or in the default compile-time system directory) with <command>file</command> argument (<command>memory</command> is an alias), or to the current interactive display with the <command>terminal</command> argument.</para>
           </listitem>
         </varlistentry>
 
         <varlistentry>
           <term>reload</term>
           <listitem>
-            <para><command>reload</command> causes <command>noitd</command> to reload configuration information from the permanent configuration store (<command>noitd.conf</command> by default, in the location specified either at startup with -c or in the default compile-time system directory).</para>
+            <para><command>reload</command> causes <command>noitd</command> to reload configuration information from the permanent configuration store (<filename>noitd.conf</filename> by default, in the location specified either at startup with -c or in the default compile-time system directory).</para>
           </listitem>
         </varlistentry>
 
@@ -206,7 +206,7 @@
                 002d58ff-20ff-4db0-9420-782fc1748dc4 127.0.0.1`ssh2
                 59698f91c167393deb952564fe316dca
               </screen>
-              <para>Each check's primary identifier is a hexadecimal GUID.  This may be tab-completed in common use from the longest unique string, much like commands. In the example above, for instance, "002" would be sufficient to tab complete a reference to the check 002d58ff-20ff-4db0-9420-782fc1748dc4. Each check is further identified as accessing a given IP/host and contains some description of what the check is doing as configured when the check was configured (see the "Configuring the System" section below, and/or <command>noitd.conf</command>). The second line for each check provides check-specific further information or status.</para>
+              <para>Each check's primary identifier is a hexadecimal GUID.  This may be tab-completed in common use from the longest unique string, much like commands. In the example above, for instance, "002" would be sufficient to tab complete a reference to the check 002d58ff-20ff-4db0-9420-782fc1748dc4. Each check is further identified as accessing a given IP/host and contains some description of what the check is doing as configured when the check was configured (see the "Configuring the System" section below, and/or <filename>noitd.conf</filename>). The second line for each check provides check-specific further information or status.</para>
           </listitem>
         </varlistentry>
 
