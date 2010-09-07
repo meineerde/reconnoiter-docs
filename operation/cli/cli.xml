@@ -178,6 +178,74 @@
       </variablelist>
     </para>
   </section>
+
+  <section>
+    <title>Showing System Information</title>
+    <para>The two main commands for showing system information are <command>show</command> and <command>watch</command>.  <command>show</command> is useful for one-off queries of information, and <command>watch</command> is useful for periodically redisplaying the same information (e.g. to see snapshots of activity while some other process is affecting the monitored system/information).</para>
+    <section>
+      <title>show</title>
+      <para><command>show</command> show accepts a number of arguments:</para>
+      <variablelist>
+        <varlistentry>
+          <term>watches</term>
+          <listitem>
+            <para><command>show watches</command> displays a list of all active watches currently being serviced by <command>noitd</command>.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>checks</term>
+          <listitem>
+            <para><command>show checks</command> displays a list of checks that <command>noitd</command> is currently servicing.  Example output is illuminative:</para>
+              <screen>
+                noit# show checks
+                1b4e28ba-2fa1-11d2-883f-b9b761bde3fb 127.0.0.1`ping_icmp
+                cnt=5,avail=100,min=0.0000,max=0.0000,avg=0.0000
+                f7cea020-f19d-11dd-85a6-cb6d3a2207dc 127.0.0.1`selfcheck
+                ok
+                002d58ff-20ff-4db0-9420-782fc1748dc4 127.0.0.1`ssh2
+                59698f91c167393deb952564fe316dca
+              </screen>
+              <para>Each check's primary identifier is a hexadecimal GUID.  This may be tab-completed in common use from the longest unique string, much like commands. In the example above, for instance, "002" would be sufficient to tab complete a reference to the check 002d58ff-20ff-4db0-9420-782fc1748dc4. Each check is further identified as accessing a given IP/host and contains some description of what the check is doing as configured when the check was configured (see the "Configuring the System" section below, and/or <command>noitd.conf</command>). The second line for each check provides check-specific further information or status.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>check</term>
+          <listitem>
+            <para><command>show check {check id}</command>. See discussion above for referencing a particular check by id.  This provides more in-depth information about a specific check.  For example, using the check list mentioned above:</para>
+              <screen>
+                noit# show check 1b4e28ba-2fa1-11d2-883f-b9b761bde3fb
+                ==== 1b4e28ba-2fa1-11d2-883f-b9b761bde3fb ====
+                name: ping_icmp [from module]
+                module: ping_icmp
+                target: 127.0.0.1
+                period: 15000
+                timeout: 14000
+                oncheck: [undef]
+                filterset: default [inherited from @filterset]
+                disable: [undef]
+                currently: running
+                last run: 9.377 seconds ago
+                availability/state: available/good
+                status: cnt=5,avail=100,min=0.0000,max=0.0001,avg=0.0000
+                metrics:
+                available[n] = 1.000000000000e+02
+                *count[i] = 5
+                average[n] = 4.359999984445e-05
+                *maximum[n] = 5.400000009104e-05
+                *minimum[n] = 2.800000038405e-05
+              </screen>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </section>
+
+    <section>
+      <title>watch</title>
+    </section>
+    <para>FIXME text...</para>
+  </section>
       
 </section>
 <!--
