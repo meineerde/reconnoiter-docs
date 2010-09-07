@@ -245,7 +245,7 @@
       <title>watch</title>
     </section>
     <para><command>watch {check id} [interval]</command> redisplays information for a given check at a configurable interval, by default the same time period that the check itself runs. FIXME interval is in units of seconds, I believe?</para>
-    <para>The currently active watches may be listed with <command>show watches</command>, and an active watch may be terminated with FIXME not sure how to do this presently</para>
+    <para>The currently active watches may be listed with <command>show watches</command>, and an active watch may be terminated with by issuing the command <command>no watch {check id}</command>.</para>
   </section>
       
 </section>
