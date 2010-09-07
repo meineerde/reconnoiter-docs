@@ -26,17 +26,19 @@
       The interactive console is accessed by telneting to the configured
       access port on the host running <command>noitd</command>.  By default this is
       port 32322.  The applicable configuration parameter in the <command>noitd.conf</command>
-      XML file is the port attribute of the "listener" element, e.g.
+      XML file is the port attribute of the "listener" element, e.g.:
       <programlisting><![CDATA[
       <listener address="*" port="32322">
-        ]]></programlisting>. Please see the configuration section of
+        ]]></programlisting> Please see the configuration section of
       the manual for more information.
     </para>
   </section>
 
   <section>
     <title>Basic Command List</title>
-    <para>
+    <para>An example session of interaction showing the use of help and a few 
+      operating modes is illustrative:
+      <screen>
       noit# help
       = Topics =
       ==&gt; 'module'
@@ -98,6 +100,7 @@
       ==&gt; 'no'
       ==&gt; 'section'
       ==&gt; 'write'
+      </screen>
     </para>
   </section>
       
