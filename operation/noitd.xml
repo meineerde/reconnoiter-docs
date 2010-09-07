@@ -12,7 +12,8 @@
 Once <command>noitd</command> is configured and running, there
 are several methods of interacting with the service.  The operator
 can interactively manage the instance via the integrated command line
-console (accessible via telnet on the port of your choice) and
+console (accessible via telnet on the port of your choice, as configured
+in noitd.conf via listener elements; by default port 32322) and
 programmatic access is available over the <command>noitd</command>
 wire protocol on port 43191.
 </para>
