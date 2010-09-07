@@ -11,7 +11,7 @@
     <title>General Operational Principles</title>
     <para>
       The command line interface to the system available through the 
-      interactive console operates in a fashion similar to Cisco's IOS, 
+      interactive console operates in a fashion similar to Cisco's IOS(tm), 
       in that there are various "levels" or "sets"/"sub-sets" of commands 
       within the interface.  Operations and operands may be tab-completed 
       or abbreviated to their un-ambiguous form as needed or desired 
