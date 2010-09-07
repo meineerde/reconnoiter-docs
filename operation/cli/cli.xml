@@ -101,6 +101,16 @@
       ==&gt; 'section'
       ==&gt; 'write'
       </screen>
+
+      <variablelist>
+        <title>Command Descriptions</title>
+        <varlistentry>
+          <term>help</term>
+          <listitem>
+            <para><command>help</command> provides brief help information appropriate to a given context.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
     </para>
   </section>
       
