@@ -67,9 +67,7 @@
       http
       snmp
       noit# configure {tab pressed twice}
-      ==&gt; 'apply'
-      ==&gt; 'terminal'
-      incomplete command.
+      apply     help      terminal
       noit# conf t
       noit(conf:/)# ls
       == Section Settings ==
@@ -100,6 +98,15 @@
       ==&gt; 'no'
       ==&gt; 'section'
       ==&gt; 'write'
+      noit(conf:/)# exit
+      noit# show
+      ==&gt; 'apply'
+      ==&gt; 'check'
+      ==&gt; 'checks'
+      ==&gt; 'eventer'
+      ==&gt; 'watches'
+      incomplete command.
+
       </screen>
 
       <variablelist>
@@ -111,11 +118,25 @@
             <para><command>help</command> provides brief help information appropriate to a given context.</para>
           </listitem>
         </varlistentry>
+
+        <varlistentry>
+          <term>show</term>
+          <listitem>
+            <para><command>show</command> shows various aspects of the system.  See the "Showing System Information" section below for further detail.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>watch</term>
+          <listitem>
+            <para><command>watch</command> is much like show except it re-displays the given information periodically.  See the "Showing System Information" section below for further detail.</para>
+          </listitem>
+        </varlistentry>
         
         <varlistentry>
           <term>exit</term>
           <listitem>
-            <para><command>exit</command> terminates the interactive session..</para>
+            <para><command>exit</command> leaves the current "level" of session (e.g. returns to regular interactive session if used within a configuration sub-"level" or exits the current interactive session entirely and closes the connection if used within the regular interaction "level").</para>
           </listitem>
         </varlistentry>
 
