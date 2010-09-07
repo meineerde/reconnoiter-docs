@@ -16,7 +16,7 @@
       within the interface.  Operations and operands may be tab-completed 
       or abbreviated to their un-ambiguous form as needed or desired 
       (analogous to "configure terminal" becoming "conf t" in common IOS 
-      usage).
+      usage).  Command history and editing is available.
     </para>
   </section>
 
@@ -244,7 +244,8 @@
     <section>
       <title>watch</title>
     </section>
-    <para>FIXME text...</para>
+    <para><command>watch {check id} [interval]</command> redisplays information for a given check at a configurable interval, by default the same time period that the check itself runs. FIXME interval is in units of seconds, I believe?</para>
+    <para>The currently active watches may be listed with <command>show watches</command>, and an active watch may be terminated with FIXME not sure how to do this presently</para>
   </section>
       
 </section>
