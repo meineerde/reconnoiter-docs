@@ -314,13 +314,106 @@
 
   <section>
     <title>Configuring the System</title>
-    <para>The focus of this section is configuring <command>noitd</command>'s behavior at run-time via the interactive console.  For documentation of <filename>noitd.conf</filename> itself, see <link linkend="configuration">the chapter on noitd configuration</link>.  As a general note, to store run-time configuration to the permanent configuration store, see the <command>write file</command> command above.</para>
+    <para>The focus of this section is configuring <command>noitd</command>'s behavior at run-time via the interactive console.  For documentation of <filename>noitd.conf</filename> itself, see <link linkend="configuration">the main chapter on system configuration</link>.  As a general note, to store run-time configuration to the permanent configuration store, see the <command>write file</command> command above.</para>
     <section>
       <title>Configure Terminal ("conf t") Mode</title>
       <para>To enter the interactive configuration mode, first telnet to <command>noitd</command>'s telnet port and issue the "configure terminal" command, which may be abbreviated as "conf t" if desired. (Please see above information about default port, port configuration location, etc.)</para>
+      <para>Configure terminal mode presents a different array of options than regular mode, which are summarized below.  (Some common commands have been ommitted as their function is identical within conf-t mode as within normal interactive mode, e.g. <command>exit</command>.)</para>
+      <variablelist>
+        <varlistentry>
+            <term>cd</term>
+            <listitem>
+              <para><command>cd {location, e.g. ".." or "checks"}</command> changes the point where the interactive configuration session is within the tree-like organizational structure of the configuration space in a fashion similar to <command>cd</command> within a filesystem directory tree.  (See note below.)</para>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>section</term>
+            <listitem>
+                <para><command>section {location}</command> operates similarly to <command>cd</command>, except that it will create the new location if it does not exist.</para>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>ls</term>
+            <listitem>
+              <para><command>ls</command> lists the configured entities at a given point within the tree-like organizational structure of the configuration space in a fashion similar to <command>ls</command> within a filesystem directory tree.  (See note below.) </para>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>status</term>
+            <listitem>
+              <para><command>status</command> displays the fine-grained details about a particular leaf-node/entity within the configuration space.</para>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>check</term>
+          <listitem>
+            <para><command>check {check id}</command> enters the configuration space for a particular leaf-node of the general configuration tree, i.e. the exact configuration for a particular check within the system. <command>check new {params}</command> may be used to set up a new check within the system, where params are dependent on what is required for a check using whichever module.  For example, <command>target 127.0.0.1 module http period 60000 timeout 10000</command> sets up a new http check on localhost running every minute and timing out after ten seconds.  By default the new check will be named "target`module", and after entry of the above command you will be placed into the configuration space for the new check as though you had run <command>check {the new id}</command> upon it.  Of note is that the new check is disabled by default (see <command>status</command> output), you must run <command>no attribute disbaled</command> to enable it.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>attribute</term>
+            <listitem>
+              <para><command>attribute</command> enables you to alter the fine-grained details about a particular leaf-node/entity within the configuration space; e.g. "no attr disable" to enable a check, or "attr port 2222" on an ssh2 check to have it check port 2222 instead of the default 22.</para>
+            </listitem>
+        </varlistentry>
+
+        <varlistentry>
+            <term>filterset</term>
+            <listitem>
+              <para><command>filterset</command> FIXME (need to fill this in)</para>
+            </listitem>
+        </varlistentry>
+      </variablelist>
+      <para>Configure terminal mode has a general tree-like organizational structure mimicing the xml in <filename>noitd.conf</filename>, hence commands like <command>cd</command> and <command>ls</command>. Within some leaf nodes of the tree (for instance, check entities' representations) <command>status</command> should be substituted for <command>ls</command> as the latter operates on entities rather than attributes of entities (which would be displayed by <command>status</command>).</para>
+      <para>An example configuration session is shown below to illustrate some of the above:</para>
+      <screen>
+        noit# conf t
+        noit(conf:/)# cd checks
+        noit(conf:/checks)# ls
+        == Section Settings ==
+        @max_initial_stutter: 30000
+        @filterset: default
+        @transient_min_period: 1000
+        @transient_period_granularity: 500
+        == Subsections ==
+        foo
+        == Checks ==
+        check[@uuid="f7cea020-f19d-11dd-85a6-cb6d3a2207dc"] 127.0.0.1`selfcheck`selfcheck
+        check[@uuid="1b4e28ba-2fa1-11d2-883f-b9b761bde3fb"] 127.0.0.1`ping_icmp`ping_icmp
+        check[@uuid="002d58ff-20ff-4db0-9420-782fc1748dc4"] 127.0.0.1`ssh2`ssh2
+        check[@uuid="70a3633f-1629-4417-a7db-d48b9558c48e"] 127.0.0.1`http`http
+        noit(conf:/checks)# check 70a3633f-1629-4417-a7db-d48b9558c48e 
+        noit(conf:127.0.0.1`http)# status
+        ==== 70a3633f-1629-4417-a7db-d48b9558c48e ====
+        name: http [from module]
+        module: http
+        target: 127.0.0.1
+        period: 60000
+        timeout: 10000
+        oncheck: [undef]
+        filterset: default [inherited from @filterset]
+        disable: [undef]
+        currently: idle
+        last run: 46.432 seconds ago
+        availability/state: available/good
+        status: code=200,rt=0.001s,bytes=39
+        metrics:
+        tt_connect[I] = 0
+        bytes[i] = 39
+        code[s] = 200
+        tt_firstbyte[I] = 1
+        duration[I] = 1
+        noit(conf:127.0.0.1`http)# exit
+        noit(conf:/checks)# exit
+        noit# 
+      </screen>
     </section>
   </section>
-      
 </section>
 <!--
 vim:ts=2:sw=2:et:
