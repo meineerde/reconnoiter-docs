@@ -178,7 +178,7 @@
         <varlistentry>
             <term>apply</term>
             <listitem>
-              <para><command>apply {variable name} {range specifier} {command}</command> works much like a <command>for {name} in {list}; do {command, using $name}; done</command> loop in the <command>bash</command> shell, in that it iterates over the given range, setting the variable name to each value in turn and executing the given command with $variablename set and available at each execution. A simple example is given below of executing an ssh2 check three times using apply:</para>
+              <para><command>apply {variable name} {range specifier} {command}</command> works much like a <command>for {name} in {list}; do {command, optionally using $name}; done</command> loop in the <command>bash</command> shell, in that it iterates over the given range, setting the variable name to each value in turn and executing the given command with $variablename set and available at each execution. A simple example is given below of executing an ssh2 check three times using apply:</para>
               <screen>
                 noit# apply i 1..3 show check 002d58ff-20ff-4db0-9420-782fc1748dc4
                 ==== 002d58ff-20ff-4db0-9420-782fc1748dc4 ====
@@ -231,6 +231,13 @@
                 fingerprint[s] = 59698f91c167393deb952564fe316dca
               </screen>
             </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>no</term>
+          <listitem>
+            <para><command>no</command> works much like "no" in <trademark>IOS</trademark>, negating or nullifying another command.  e.g. <command>no watch {check id} {interval}</command> to disable a given watch (see below for further details).</para>
+          </listitem>
         </varlistentry>
       </variablelist>
     </para>
@@ -301,8 +308,8 @@
     <section>
       <title>watch</title>
     </section>
-    <para><command>watch {check id} [interval]</command> redisplays information for a given check at a configurable interval, by default the same time period that the check itself runs. Interval is given in units of milliseconds.</para>
-    <para>The currently active watches may be listed with <command>show watches</command>, and an active watch may be terminated with by issuing the command <command>no watch {check id}</command>.</para>
+    <para><command>watch {check id} {interval}</command> redisplays information for a given check at a configurable interval. Interval is given in units of milliseconds.  If interval is omitted, presently, there is a bug where the check begins to output at its configured interval directly to the cli, but does not appear as a watch in <command>show watches</command> and <command>no watch {id}</command> has no effect.</para>
+    <para>The currently active watches may be listed with <command>show watches</command>, and an active watch may be terminated with by issuing the command <command>no watch {check id} {interval}</command> where check id and interval are the ones used for the initial creation of the watch.</para>
   </section>
 
   <section>
