@@ -314,7 +314,7 @@
 
   <section>
     <title>Configuring the System</title>
-    <para>The focus of this section is configuring <command>noitd</command>'s behavior at run-time via the interactive console.  For documentation of <filename>noitd.conf</filename> itself, see <link linkend="configuration">the chapter on noitd configuration</link>.  As a general note, to store run-time configuration to the permanent configuration store, see the <command>write file</command> above.</para>
+    <para>The focus of this section is configuring <command>noitd</command>'s behavior at run-time via the interactive console.  For documentation of <filename>noitd.conf</filename> itself, see <link linkend="configuration">the chapter on noitd configuration</link>.  As a general note, to store run-time configuration to the permanent configuration store, see the <command>write file</command> command above.</para>
     <section>
       <title>Configure Terminal ("conf t") Mode</title>
       <para>To enter the interactive configuration mode, first telnet to <command>noitd</command>'s telnet port and issue the "configure terminal" command, which may be abbreviated as "conf t" if desired. (Please see above information about default port, port configuration location, etc.)</para>
