@@ -365,7 +365,7 @@
         <varlistentry>
             <term>filterset</term>
             <listitem>
-              <para><command>filterset</command> FIXME (need to fill this in)</para>
+              <para><command>filterset</command> is applicable only in the /filterset "directory" and has to do with the maintenance of filters, which are (briefly) exclusion patterns that filter out collected metrics from being reported upstream to <command>stratcon</command> (the noit daemon will still collect all of the data, but only the un-filtered metrics will propagate).</para>
             </listitem>
         </varlistentry>
       </variablelist>
