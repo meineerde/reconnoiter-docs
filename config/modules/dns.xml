@@ -134,6 +134,34 @@
         </listitem>
       </varlistentry>
     </variablelist>
+    <variablelist>
+      <varlistentry>
+        <term>want_sort</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>required</term>
+              <listitem>
+                <para>optional</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>default</term>
+              <listitem>
+                <para>true</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>allowed</term>
+              <listitem>
+                <para>(true|false|on|off)</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <para>Sorts (strcmp) the answers if multiple RRs are returned in the result set.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
   </section>
   <example>
     <title>Establishing PTR records for hosts.</title>
